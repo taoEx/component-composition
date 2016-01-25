@@ -1,9 +1,10 @@
-{{#each item in formContent}}
+{{#each formContent as |item|}}
   {{#if item.instruction}} 
     {{generic-bar content=item.instruction}}
   {{/if}}
   {{#if item.personalAnnualIncome}}
     {{form-field field=item.personalAnnualIncome}}
+    <label>{{validation.personalAnnualIncomeValid}}</label>
   {{/if}}
   {{#if item.name}}
     {{form-field field=item.name}}

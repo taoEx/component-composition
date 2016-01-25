@@ -1,9 +1,11 @@
-{{#each item in pageContent}}
+{{#each pageContent as |item|}}
   {{#if item.masthead}} 
     {{generic-bar content=item.masthead}}
   {{/if}}
   {{#if item.incomeForm}}
     {{generic-form formContent=item.incomeForm}}
   {{/if}}
-  
+  {{#if item.actionPanel}}
+    {{action-panel}}
+  {{/if}}
 {{/each}}
