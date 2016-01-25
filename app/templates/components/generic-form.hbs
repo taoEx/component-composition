@@ -1,0 +1,18 @@
+{{#each item in formContent}}
+  {{#if item.instruction}} 
+    {{generic-bar content=item.instruction}}
+  {{/if}}
+  {{#if item.personalAnnualIncome}}
+    {{form-field field=item.personalAnnualIncome}}
+  {{/if}}
+  {{#if item.name}}
+    {{form-field field=item.name}}
+  {{/if}}
+  {{#if item.help}}
+    {{generic-bar content=item.help}}
+  {{/if}}
+{{/each}}
+
+
+
+{{!-- {{input value=validation.forIncomeForm}} --}}

@@ -1,0 +1,9 @@
+{{#each item in pageContent}}
+  {{#if item.masthead}} 
+    {{generic-bar content=item.masthead}}
+  {{/if}}
+  {{#if item.incomeForm}}
+    {{generic-form formContent=item.incomeForm}}
+  {{/if}}
+  
+{{/each}}
