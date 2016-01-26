@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   validation:Ember.inject.service(),
+  offerData: Ember.inject.service(),
   model(params) {
     var validation = this.get('validation');
     var rules = [];
@@ -9,7 +10,7 @@ export default Ember.Route.extend({
       rules:['required','numeric',{max:100000,min:10}]});
     validation.set('rules',rules);
     if (params.page_slug==='test') {
-      return Ember.Object.create({
+      var model = Ember.Object.create({
         pageContent: [
           {masthead: {
             html: '<h4>Offer masterhead</h4>'
@@ -36,9 +37,18 @@ export default Ember.Route.extend({
             }},
             
           ]},
-          {actionPanel:true}
+          {actionPanel:{
+            target:null
+          }}
         ]
       });
+      var form = model.pageContent.findBy('incomeForm');
+      var data = this.get('offerData');
+      if (form) {
+        data.set('form',form);
+      }
+      
+      return model;
     }
   },
 

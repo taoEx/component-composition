@@ -3,9 +3,9 @@
     {{generic-bar content=item.masthead}}
   {{/if}}
   {{#if item.incomeForm}}
-    {{generic-form formContent=item.incomeForm}}
+    {{generic-form formContent=offerData.form.incomeForm}}
   {{/if}}
   {{#if item.actionPanel}}
-    {{action-panel}}
+    {{action-panel target=item.incomeForm}}
   {{/if}}
 {{/each}}
