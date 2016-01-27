@@ -10,7 +10,9 @@
     {{form-field field=item.name}}
   {{/if}}
   {{#if item.help}}
+  {{#conditional-display isDisplaying=offerData.toggle}}
     {{generic-bar content=item.help}}
+  {{/conditional-display}}
   {{/if}}
 {{/each}}
 

@@ -12,6 +12,7 @@ export default Ember.Component.extend({
           validation.set('personalAnnualIncomeValid','Personal Annual Income valid');
         }
       });
+      data.set('toggle',!data.get('toggle'));
     }
   }
 });
