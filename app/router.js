@@ -7,6 +7,12 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('page',{path: '/pages/:page_slug'});
+  this.route('offers-campaign',{path:'/campaign/:campaign_id'},function() {
+    this.route('offer',{path:'/:offer_slug'},function() {
+      this.route('accepted');
+    });
+  });
+  
 });
 
 export default Router;

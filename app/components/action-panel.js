@@ -3,6 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   validation:Ember.inject.service(),
   offerData: Ember.inject.service(),
+  didInsertElement() {
+    var target = this.get('target');
+  },
   actions: {
     validate() {
       var validation = this.get('validation');
