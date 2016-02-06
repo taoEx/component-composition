@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('offers-campaign',{path:'/campaign/:campaign_id'},function() {
     this.route('offer',{path:'/:offer_slug'},function() {
       this.route('accepted');
+      this.route('declined');
     });
   });
   

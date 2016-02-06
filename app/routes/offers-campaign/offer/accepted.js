@@ -2,7 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return Ember.Object.create({value:'accepted'});
+    return Ember.Object.create({
+      value:'accepted',
+      item1:'item1',
+      item2:'item2',
+      item3:'item3'
+    });
   },
   renderTemplate() {
     var self = this;
@@ -11,5 +16,10 @@ export default Ember.Route.extend({
 
     // },500);
     
+  },
+  actions: {
+    back() {
+      this.transitionTo('offers-campaign.offer','migration');
+    }
   }
 });
