@@ -9,4 +9,9 @@ export default Ember.Route.extend({
   // renderTemplate() {
   //   this.render('offers-campaign');
   // }
+  actions:{
+    decline() {
+      this.transitionTo('offers-campaign.offer.declined');
+    }
+  }
 });

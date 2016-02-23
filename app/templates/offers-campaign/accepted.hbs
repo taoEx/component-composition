@@ -1,0 +1,21 @@
+<h1>ACCEPTED</h1>
+<div class="row form-input-group">
+  <div class="form-input-label">
+    <label for="personalAnnualIncome">Personal Annual Income</label>
+  </div>
+  <div class="form-input input-group">
+    <span class="input-group-addon">$</span>
+    <input name="personalAnnualIncome" type="text" value={{model.value}} class="form-control" aria-label="Amount (to the nearest dollar)">
+    <span class="input-group-addon">.00</span>
+  </div>
+</div>
+{{#items-list action 'back' as |list| }}
+  <ul>
+    {{list-item id='1' caption='This should show.' targetObject=list register='registerChild' onClick='closeAll'}}
+    {{list-item id='2' targetObject=list caption=model.item2 register='registerChild'}}
+    {{list-item id='3' targetObject=list caption=model.item3 register='registerChild'}}
+  </ul>
+{{/items-list}}
+
+<button {{action 'back'}}>Back</button>
+

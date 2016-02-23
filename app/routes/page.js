@@ -52,6 +52,16 @@ export default Ember.Route.extend({
     }
   },
 
+  renderTemplate() {
+    var self = this;
+    Ember.TEMPLATES["pages"] = 'test template';
+    // self.render('pages',{into:'pages'});
+    // Ember.run.later(function() {
+
+    // },500);
+    
+  },
+
   createFormItem(name,content){
     var formItem = {};
     formItem[name]=content;
